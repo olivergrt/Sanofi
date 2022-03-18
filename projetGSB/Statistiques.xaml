@@ -1,0 +1,29 @@
+﻿<Window x:Class="projetGSB.Statistiques"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetGSB"
+        mc:Ignorable="d"
+        xmlns:graph="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        Title="Statistiques" Height="800" Width="1480" Loaded="Window_Loaded_Statistiques">
+    <Grid Margin="0,0,3.6,1.4" Background="AliceBlue">
+        <!--Grpahique 1-->
+        <graph:CartesianChart Grid.Column="0" Name="graph_NbMedParFamille" Margin="10,23,891,381"/>
+        <!--Grpahique 2-->
+        <graph:PieChart Name="graphCamembert_NbMedParFamille" Margin="762,54,78,378"/>
+        <!--Graphique 3-->
+        <ComboBox Name="cboActions" SelectionChanged="cboActions_SelectionChanged" Margin="353,396,361,338">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NomCommercialMed}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <graph:CartesianChart Grid.Column="0" Name="graph_MedPerturbateurPrix" Margin="297,436,309,49"/>
+        <Label Content="Nombre de médicaments par familles" HorizontalAlignment="Left" Margin="828,9,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="1292,685,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="Button_Click"/>
+    </Grid>
+</Window>
