@@ -100,7 +100,7 @@ namespace projetGSB
             axe.Labels = lesDatas3.Keys.ToList();
             graph_MedPerturbateurPrix.AxisX.Add(axe);
             graph_MedPerturbateurPrix.Series.Add(cs);
-            cs.Title = "Prix par médicaments perturbateurs";
+            cs.Title = "Prix par médicaments non perturbateurs";
             cs.DataLabels = true;
 
             graph_MedPerturbateurPrix.LegendLocation = LegendLocation.Top;
